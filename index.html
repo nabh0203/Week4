@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just do it! Nike</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="https://www.nike.com/kr/"><img src="./img/Nike_logo_header.png" alt=""></a></h1>
+        <div>
+            <ul>
+                <li>About</li>
+                <li>Sale</li>
+                <li>How Much?</li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="inner1">
+        <button>Just do it!</button>
+        <video id="my_video" autoplay muted loop>
+            <source src="./video/Just Do It.mp4" type="video/mp4">
+            <source src="./video/Just Do It.ogg" type="video/ogg">
+            <source src="./video/Just Do It.webm" type="video/webm">
+        </video>
+    </section>
+    <section class="inner2">
+        <img class="jordan" src="img/jordan_1.jpg">
+            <p>1985년에 처음 발매 되었다. <br>매년 새로운 디자인을 통해 발매 되고 있으며,<br>
+                조던이 NBA에서 은퇴한 후에도 계속해서 발매 되고 있다.<br> 또한 조던 브랜드는 팀 조던으로 운동 선수들을 후원하고 있으며,<br>
+                이 선수들의 시그니처 상품들과 신발 외<br> 다양한 의류, 용품들도 발매하고 있다.<br>
+                이들 제품들은 기존 조던 넘버링 모델에서 <br>일부 요소나 컨셉을 따오는 경우가 많다.
+        </div>
+    </section>
+    <section class="inner2" id="section4">
+        <div id="box">
+            <img class="box_img" src="./img/Just_do_it_box.png">
+        </div>
+    </section>
+
+    <footer>
+
+        <address>
+            66 Gyewondaehak-ro, Uiwang-si, Gyeonggi-do, Republic of Korea (16038)
+        </address>
+        <p>
+            ⓒ 2023 Kaywon University of Arts / DMD / content Programming / Na Byung Ho . All Right Reserved.
+        </p>
+    </footer>
+</body>
+<script>
+    const myHeader = document.getElementById("header");
+    myHeader.onmouseover = function () {
+        this.classList.add("over");
+
+    }
+    myHeader.onmouseout = function () {
+        this.classList.remove("over");
+    }
+
+    window.addEventListener("scroll", function () {
+        myHeader.classList.add("show")
+
+        if (window.scrollY > 200) {
+
+            myHeader.style.top = - 100 + "px";
+
+        } else {
+            myHeader.style.top = 0 + "px";
+
+        }
+
+    });
+
+    const myVideo = document.getElementById("my_video");
+    myVideo.playbackRate = 5;
+
+    const element = document.getElementById("box");
+    const texture = document.querySelector('.texture');
+
+    window.addEventListener("scroll", function () {
+        const height = document.body.clientHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const width = Math.floor(scrolled / height * 100);
+
+        if (width > 100) {
+            width = 100;
+        };
+
+        element.style.width = `${width}%`;
+
+
+    });
+</script>
+
+</html>
